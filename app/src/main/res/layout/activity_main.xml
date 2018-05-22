@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="ru.spb.yakovlev.android3_1_jetpack_java.view.MainViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+
+        <include
+            android:id="@+id/include0"
+            layout="@layout/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:index="@{0}"
+            app:layout_constraintBottom_toTopOf="@+id/include1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:model="@{model}" />
+
+        <include
+            android:id="@+id/include1"
+            layout="@layout/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:index="@{1}"
+            app:layout_constraintBottom_toTopOf="@+id/include2"
+            app:layout_constraintTop_toBottomOf="@+id/include0"
+            app:model="@{model}" />
+
+        <include
+            android:id="@+id/include2"
+            layout="@layout/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:index="@{2}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include1"
+            app:model="@{model}" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
